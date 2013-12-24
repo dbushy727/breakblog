@@ -1,19 +1,59 @@
 /* START RESET */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
 /* END RESET */
+a:link {color:#000000;}      /* unvisited link */
+a:visited {color:#000000;}  /* visited link */
+a:hover {color:#009933;}  /* mouse over link */
+a:active {color:#FFFFFF;}  /* selected link */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica;
-  background-color: pink;
+  font-family: 'Rye', cursive;
+  background-image: url('images/nature.jpg');
+  background-size: cover;
+
 }
 
+.welcome {
+  text-align: center;
+  padding: 20px;
+}
+.welcome h1 {
+  text-shadow: 1px 1px #ffffff;
+}
+
+nav {
+  background: #f2f5f6;
+  background: -moz-linear-gradient(top, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
+  padding-left: 5px;
+}
+
+
+.splash {
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color:rgba(114,129,139,.4);
+  border-radius: 30px;
+  height: 400px;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+  text-shadow: 1px 0px #ffffff;
+}
+
+.splash ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 10px;
+}
 #main_container {
   width: 30%;
   margin: 0 auto 0 auto;
-  background-color: teal;
+  background-color:rgba(114,129,139,.4);
   padding: 0;
+  border-radius: 40px;
 }
 
 .main_heading {
@@ -35,7 +75,6 @@ body {
 
 .post {
   margin: 10px 10px 30px 10px;
-  background-color: teal;
 }
 
 .post_new {
@@ -48,9 +87,22 @@ body {
 }
 
 .comment_body {
-  background-color: teal;
+  background-color:rgba(114,129,139,.4);
   color: white;
   width: 400px;
   padding: 10px;
   margin: 10px;
+}
+
+.newuser {
+  text-align: center;
+}
+
+.signin {
+  text-align: center;
+}
+
+.logout {
+  text-align: center;
+  padding: 20px;
 }

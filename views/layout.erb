@@ -3,18 +3,20 @@
 <head>
   <title>Simple Blog</title>
   <link rel="stylesheet" type="text/css" href="/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<nav>
-  <a href="/">home</a>
-  <a href="/posts">posts</a>
-  <% if @username %>
-  <span> Welcome, <%= @username %></span>
-  <% else %>
-    <a href="/users/new">register</a>
-    <a href="/users/sign_in">login</a>
-  <% end %>
-</nav>
+    <nav>
+        <a href="/">home</a>
+        <a href="/posts">posts</a>
+          <% if @username %>
+            <a href="/logout">logout</a>
+            <span> Welcome, <%= @username %></span>
+          <% else %>
+            <a href="/users/new">register</a>
+            <a href="/users/sign_in">login</a>
+          <% end %>
+    </nav>
   <%= yield %>
 </body>
 </html>

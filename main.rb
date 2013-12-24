@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
+require 'coderay'
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 # configures the database
@@ -28,6 +29,7 @@ get '/posts' do
   @users = User.all
   @posts = Post.all
   p @posts
+  @user = User.where(username: @username).first
   erb :"posts/index"
 end
 
@@ -35,7 +37,7 @@ get '/post/:id' do
   @username = session[:username] if session[:username]
   id = params[:id].to_i
   @post = Post.find(id)
-
+  @code = params[:code]
   erb :"posts/show"
 end
 
@@ -89,7 +91,7 @@ end
 # Users routes
 
 get '/users/new' do
-  @username = session[:username] if session[:username]
+  @username = session[:username] unless session[:username]
   erb :"users/new"
 end
 
@@ -158,5 +160,14 @@ post '/sessions/create' do
   end
 
   session[:username] = username
-  redirect "/"
+  redirect "/posts"
+end
+
+get '/logout' do 
+erb :logout
+end
+
+post '/logout' do
+session[:username] = nil
+redirect '/'
 end
